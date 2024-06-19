@@ -105,12 +105,12 @@ def run(args: argparse.Namespace) -> None:
             logging.info(
                 f"Using foundation model mace-off-2023 {model_type} as initial checkpoint. ASL license."
             )
-            model_foundation = mace_off(
+            calc = mace_off(
                 model=model_type,
                 device=args.device,
                 default_dtype=args.default_dtype,
-                return_raw_model=True,
             )
+            model_foundation = calc.models[0]
         else:
             model_foundation = torch.load(args.foundation_model, map_location=device)
             logging.info(
@@ -354,7 +354,7 @@ def run(args: argparse.Namespace) -> None:
 
     # Selecting outputs
     compute_virials = False
-    if args.loss in ("stress", "virials", "huber"):
+    if args.loss in ("stress", "virials", "huber", "universal"):
         compute_virials = True
         args.compute_stress = True
         args.error_table = "PerAtomRMSEstressvirials"
