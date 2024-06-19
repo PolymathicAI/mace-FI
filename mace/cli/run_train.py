@@ -676,6 +676,7 @@ def run(args: argparse.Namespace) -> None:
             entity=args.wandb_entity,
             name=args.wandb_name,
             config=wandb_config,
+            group=args.wandb_group,
         )
         wandb.run.summary["params"] = args_dict_json
 

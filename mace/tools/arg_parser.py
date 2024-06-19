@@ -604,6 +604,12 @@ def build_default_arg_parser() -> argparse.ArgumentParser:
             "forces_weight",
         ],
     )
+    parser.add_argument(
+        "--wandb_group",
+        help="Weights and Biases group name for better distributed reporting",
+        type=str,
+        default="",
+    )
     return parser
 
 

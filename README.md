@@ -47,6 +47,22 @@ Also available:
 
 A partial documentation is available at: https://mace-docs.readthedocs.io
 
+## FI installation with modules
+```
+module purge
+module load modules/2.2-20230808
+module load gcc
+module load python/3.9.16
+module load cuda
+module load cudnn
+python -m venv --system-site-packages ~/envs/mace
+source ~/envs/mace/bin/activate
+pip install --upgrade pip
+pip3 install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+git clone https://github.com/ACEsuit/mace.git
+pip install -e ./mace[wandb]
+```
+
 ## Installation
 
 Requirements:
