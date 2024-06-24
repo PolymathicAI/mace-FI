@@ -1,7 +1,7 @@
 name: "fi_mace"
-train_file: "/mnt/home/sgolkar/ceph/datasets/mace/combined_preprocessed/train/"
-valid_file: "/mnt/home/sgolkar/ceph/datasets/mace/combined_preprocessed/val/"
-statistics_file: "/mnt/home/sgolkar/ceph/datasets/mace/combined_preprocessed/statistics.json"
+train_file: "/mnt/home/sgolkar/ceph/datasets/mace/combined_full/train/"
+valid_file: "/mnt/home/sgolkar/ceph/datasets/mace/combined_full/val/"
+statistics_file: "/mnt/home/sgolkar/ceph/datasets/mace/combined_full/statistics.json"
 loss: "universal"
 energy_weight: 1
 forces_weight: 10
@@ -44,4 +44,4 @@ wandb: true
 wandb_entity: flatiron-scipt
 wandb_project: mace
 # the following needs to be a unique name for easy wandb tracking
-wandb_group: run_1
+wandb_group: run_4

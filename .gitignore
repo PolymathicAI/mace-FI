@@ -30,3 +30,4 @@ dist/
 /wandb
 /checkpoints
 *.model
+scratch/
